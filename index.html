@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexo - Future of Tech</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dxojom3da/image/upload/v1764497291/Flexo_Logo_gabfni.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #09090b; /* zinc-950 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8b5cf6; /* violet-500 */
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #7c3aed; /* violet-600 */
+      }
+
+      /* Typewriter Animation */
+      .typewriter {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 0.15em solid #a78bfa; /* violet-400 */
+        white-space: nowrap;
+        margin: 0;
+        /* Combined animations: 
+           typing: controls width (text appearing/disappearing)
+           blink-caret: controls cursor blinking
+           hide-caret: sets cursor width to 0 after typing is done
+        */
+        animation: 
+          typing 8s steps(40, end) infinite,
+          blink-caret .75s step-end infinite,
+          hide-caret 8s step-end infinite;
+        width: 0;
+        vertical-align: bottom;
+      }
+
+      @keyframes typing {
+        0% { width: 0; opacity: 1; }
+        40% { width: 100%; opacity: 1; } /* Typing finished */
+        70% { width: 100%; opacity: 1; } /* Hold visible */
+        71% { width: 0; opacity: 0; }     /* Disappear */
+        95% { width: 0; opacity: 0; }     /* Wait (invisible) */
+        100% { width: 0; opacity: 1; }    /* Reset for next loop */
+      }
+
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #a78bfa } /* violet-400 */
+      }
+
+      @keyframes hide-caret {
+        0% { border-right-width: 0.15em; }
+        40% { border-right-width: 0.15em; } /* Cursor visible while typing */
+        41% { border-right-width: 0; }      /* Cursor disappears after typing */
+        100% { border-right-width: 0; }
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      /* Path Dot Animation */
+      @keyframes movePath {
+        from { stroke-dashoffset: 100; }
+        to { stroke-dashoffset: 0; }
+      }
+      .animate-path-dot {
+        animation: movePath 8s linear infinite;
+      }
+
+      /* Rotating Animation */
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      /* Custom class to handle group hover for the spin animation */
+      .group:hover .animate-spin-slow {
+        animation: spin-slow 3s linear infinite;
+      }
+
+      /* Infinite Scroll Animation */
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-scroll {
+        animation: scroll 40s linear infinite;
+      }
+      .animate-scroll:hover {
+        animation-play-state: paused;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-zinc-950 text-white antialiased selection:bg-violet-500 selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
